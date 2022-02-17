@@ -1,113 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cace8c88fa.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link  rel="preconnect" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <a href="https://es.pikbest.com/png-images/qiantu-cartoon-snail-loading-loading-gif-animation_2734139.html"></a>
 
     <title>Rick</title>
 </head>
+
 <body>
-    <section>
-        <div header class="header">
-            <!---------------NAV------------------------>
-            <div nav class="nav">
-                <div class="logo">
-                    <img class="logo" src="imagenes/titulo.png" alt="Ricky and Morty">
-                </div>
-                <div class="boton-burger">
-                    <button class="nav-toggle">
-                        <img class="hamburguesa" src="imagenes/hamburgermenu.png" alt="Menu hamburguesa">
-                    </button>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-menu-item">
-                        <a href="#main" class= "nav-menu-link nav-link"><img class="home" src="imagenes/casa.png" id="home"></a>
-                    </li>
-                    <li class="nav-menu-item">
-                        <a href="#personajes" class="nav-menu-link nav-link">Characters</a>
-                    </li>
-                    <li class="nav-menu-item">
-                        <a href="#" class="nav-menu-link nav-link">Location</a>
-                    </li>
-                    <li class="nav-menu-item">
-                        <a href="#peliculas" class="nav-menu-link nav-link">Episodes</a>
-                    </li>
-                </ul>
+    <!---------------NAV---------------------->
+
+    <header>
+        <div class="header-content">
+
+            <div class="logo">
+                <img class="logo" src="imagenes/titulo.png" alt="Ricky and Morty">
             </div>
 
-            <!--------------BARRA BUSQUEDA------------------->
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#seccion-character">Characters</a=></li>
+                        <li><a href="#seccion-location">Location</a></li>
+                        <li><a href="#seccion-episode">Episodes</a></li>
 
-            <div class="barra-busqueda">
-                <div class="contenedor-buscador">
-                    <div class="contenedor-lupa">
-                        <img class="lupa" src="imagenes/lupa.png" id="lupa">
-                    </div>
-                    <div class="input" id="busqueda-personaje">
-                        <input class="" type="search" style="width:450px; height:30px; border-radius: 5px;" id="bp"
-                            placeholder="Find your favourite character">
-                    </div>
-                </div>
+                    </ul>
+                </nav>
             </div>
         </div>
+        <div id="ctn-icon-search">
+            <img class="lupa" src="imagenes/lupa.png" id="lupa" alt="search">
+        </div>
+
+    </header>
+
+    <form class="form-ctn-bars-search" id="ctn-bars-search">
+        <label for="input-search">Search</label>
+        <input type="text" id="input-search" placeholder="Search">
+        <botton class="boton-busqueda" type="submit" id="busqueda"><img src="imagenes/back.png" alt="buscar"></botton>
+        <img class="cerrar" src="imagenes/boton-cerrar.png" id="cerrar-busqueda">
+    </form>
+
+
+
+    <!-------------------MAIN-------------------------------->
+
+
+    <div class="container-cover">
+        <div class="container-info-cover">
+            <h1>Welcome to the <br>Rick and Morty Wiki</h1>
+        </div>
+
+    </div>
+
+
+
+    <!----------------PERSONAJES------------------>
+    <!--<section class="seccion-character" id="seccion-character">
+         <img src="imagenes/1200x1200.gif" id="cargando" >
+        </section>-->
+
+    <section class="seccion-character" id="seccion-character">
+        <div class="tarjetas" id="tarjetas-personajes"></div>
+
     </section>
-    <!-------------------MAIN---------------------------------->
-    <section class="main" id="main">
-        <div class="cuerpo" id="cuerpo">
-            <img src="imagenes/Diseño sin título (2).png" id="imagen-main">
-        </div>
 
-        <div class contenido id="contenido">
-            <p class="presentacion" id="presentacion">
-                Rick and Morty is the Emmy award-winning half-hour animated hit comedy series on Adult Swim that follows a sociopathic genius scientist.<br>
-                Rick is a drunken, brilliant scientist who kidnaps his cantankerous teenage grandson Morty
-                for adventures in other worlds and alternate dimensions.<br>
-                Created By: Dan Harmon, Justin Roiland</p>
-        </div>
-        </div>
+    <div controles id="controles">
+        <button class="boton-prev prev-personajes" id="prev"><img src="imagenes/izquierda.png" id="izq"></button>
+        <button class="boton-next next-personajes" id="next"><img src="imagenes/derecha.png" id="der"></button>
+    </div>
+
+    <!----------------------LOCATION---------------------->
+
+    <section class="seccion-location" id="seccion-location">
+        <div class="location" id="tarjetas-locacion"></div>
     </section>
-    <!----------------FOOTER--------------------------------->
-    <section class="footer" id="footer">
-        <div class="footer" id="footer">
-            <h2>Made with patience and enthusiasm by Stella Maris Loreto and Claudia Rocha</h2>
-        </div>
+
+    <div controles id="controles">
+        <button class="boton-prev prev-location" id="prev-location"><img src="imagenes/izquierda.png" id="izq"></button>
+        <button class="boton-next next-location" id="next-location"><img src="imagenes/derecha.png" id="der"></button>
+    </div>
+
+    <!-------------------------EPISODES-------------->
+    <section class="seccion-episode" id="seccion-episode">
+        <div class="episode" id="tarjetas-episode"></div>
     </section>
-    <!------------------PERSONAJES------------------->
-    <section id="seccion-personajes">
-        <div class="personajes" id="tarjetas-contenedor">
-            <div id="tarjeta">
-            </div>
-    
-            <button id="prev">Pagina Anterior</button>
-            <button id="next">Proxima Pagina</button>
+
+    <div controles id="controles">
+        <button class="boton-prev prev-episode" id="prev-episode"><img src="imagenes/izquierda.png" id="izq"></button>
+        <button class="boton-next next-episode" id="next-episode"><img src="imagenes/derecha.png" id="der"></button>
+    </div>
+    <!--------------FOOTER------------------------------->
+    <div class="container-footer">
+        <div class="footer">
+            <h2 class="hecho" id="hecho">Made with patience and enthusiasm by Stella Maris Loreto</h2>
         </div>
-        </section>
-    
-        <section id="caracteristicas">
-            <div class="detalles" id="detalles-contenedor" >
-                <div id="detalle">
-                    
-                </div>
-            </div>
-        </section>
-
-
-
-    <!------------------------------peliculas--------------->
-    <section>
-        <div class="pelicula" id="peliculas">
-            <div id="pelicula">
-            </div>
-    
-            <button id="prev">Pagina Anterior</button>
-            <button id="next">Proxima Pagina</button>
-        </div>
-    </section>
+    </div>
 
     <script src="index.js"></script>
 </body>
+
 </html>

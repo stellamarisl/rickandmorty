@@ -1,266 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@100&display=swap');
+
+/*********VARIABLES***********/
+
 $color: white;
+$colorsecundario:#00b2ca;
+$colorsombra: #7c7675;
+$colorhover: #15e6aa;
+
+$font: 'Indie Flower', cursive;
+$font1:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+
 @mixin flex-wrap {
     display: flex;
     flex-wrap: wrap;
 }
+
+@mixin flex-justify{
+    display: flex;
+    justify-content: center;
+}
+
+
 *{
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    font-family: $font1
+    
     
 }
 
 body{
-    padding: 90px 20px 0;
     background-image: url("imagenes/canta-cuentos.jpg");
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    
 }
 
 
-
-.header{
-    background-color: #0a0a0a;
-    height: 130px;
+header{
     position: fixed;
-    width: 100%;
     top: 0;
-    left: 0;
+    width: 100%;
+    height: 80px;
+    background: black;
+    z-index: 10;
     
 }
 
-
-
-.nav{
-    display: flex;
-    justify-content: space-between;
-    max-width: 992px;
-    margin: 0 auto;
-}
-
-.nav-link{
-    color: $color;
-    text-decoration: none;
+.header-content{
+max-width: 1200px;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
 }
 
 .logo{
-    width: 300px;
-    height: auto;
-    padding: 8px 40px;
-    line-height: 100px;
-
+    height: 80px;
+    @include flex-justify
+    
 }
 
-.nav-menu{
+.menu{
+    height: 80px;
+}
+
+.menu nav{
+    height: 100%;
+}
+
+.menu nav ul{
+    height: 100%;
     display: flex;
-    margin-right: 40px;
     list-style: none;
 }
 
-.nav-menu-item{
+.menu nav ul li{
+    height: 100%;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu nav ul li a{
+    color: $color;
+    transition: 300ms;
     font-size: 18px;
-    margin: 0 10px;
-    line-height: 100px;
-    text-transform: uppercase;
-    width: max-content;
-}
-.nav-menu-link{
-    padding: 8px 12px;
-    border-radius: 3px;
-}
-.nav-menu-link:hover{
-    background-color: #4ac590;
 }
 
-.nav-toggle{
-    background: none;
-    border: none;
-    padding: 0 20px;
-    line-height: 40px;
+.menu nav ul li a:hover{
+    color: $colorsecundario;
+}
+#ctn-icon-search{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+
+#lupa{
+    width: 80px;
+    height: auto;
+    
+}
+
+
+#ctn-bars-search{
+    @include flex-wrap;
+    position: relative;
+    top: -10px;
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+    z-index: 9;
+}
+
+#ctn-bars-search input{
+    display: flex;
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+    background-color:$color;
+    border-radius: 15px;
+}
+
+#cerrar-busqueda{
+    display: flex;
+    width: 40px;
+    
+}
+
+#busqueda{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    
+    
+}
+
+
+/******MAIN*******/
+.container-cover{
+    width: 100%;
+    height: 550px;
+    position: relative;
+    margin-top: -10px;
+    background-image: url(./imagenes/fondo\ rick.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.container-info-cover{
+    max-width: 800px;
+    height: 550px;
+    margin: auto;
+    @include flex-justify();
+    text-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container-info-cover h1{
+    font-family: $font;
+    font-size: 60px;
+    font-weight: 500px;
+    color: black;
+}
+
+.container-main{
+    width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.container-footer{
+    width: 100%;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.container-footer footer{
+    max-width: 1200px;
+    margin: auto;
+    @include flex-justify;
+    align-items: center;
+}
+
+
+.container-footer footer h2{
+    font-family: $font;
+    font-size: 20px;
+    color: $font;
+}
+
+
+
+/*******PERSONAJES******************/
+.seccion-character{
+    padding: 20px;
+    padding-bottom: 40px;
+    @include flex-wrap;
+    
+
+    
+}
+
+#tarjetas-personajes{
+    @include flex-wrap;
+    padding: 30px;
+    justify-content: space-around;
+    font-family: $font1;
+    color: $color;
+   }
+
+   .tarjetas{
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid $color;
+    border-radius: 10px;
+    transition: all 500ms;
+    
+}
+
+.tarjetas:hover .detalles{
+    margin-top: 0;
+}
+
+.tarjetas:hover .img-personaje{
+    margin-top: -110px;
+}
+
+.detalles{
+    width: 300px;
+    color: $color;
+    padding: 20px;
+    margin-top: -120px;
+    transition: all 500ms;
+
+}
+
+.img-personaje{
+    position: relative;
+    z-index: 1;
+
+}
+
+
+/**************location**************/
+
+#tarjetas-locacion{
+    @include flex-wrap;
+    padding: 30px;
+    font-family: $font1;
+    color: $color;
+   }
+
+
+
+   .location{
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid $color;
+    border-radius: 10px;
+    
+}
+
+.img-tierra{
+    width: 300px;
+    height: 250px;
+}
+
+
+/**********EPISODES**************/
+#tarjetas-episode{
+    @include flex-wrap;
+    padding: 30px;
+    font-family: $font1;
+    color: $color;
+   }
+
+   .episode{
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid $color;
+    border-radius: 10px;
+ 
+}
+
+.img-tv{
+    width: 300px;
+    height: 250px;
+}
+
+
+/***#cargando{              MALE: esto era para cargar el SetTimeout, al 
+    display: flex;                ponerlo me desaparecian todas las tarjetas
+    justify-content: center;
+    width: 100px;
+    height: 100px;
     display: none;
-    cursor: pointer;
 }
 
-.hamburguesa{
-    width: 20px;
-    height: auto;
-    line-height: 60px;
+
+
+/**************PAGINACION*************/
+#controles{
+    @include flex-justify;
+    align-items: center;
 }
 
-.home{
-    width: 22px;
-    height: auto;
+#izq,
+#der{
+    width: 50px;
+    
 }
 
-@media (max-width: 768px){
-    body{
-        padding: 80px;
-    }
-    
-    .header{
-        height: 60px;
-    }
-    
-    
-    .logo{
-        width: 50px;
-        height: auto;
-    
-    }
-    
-    .nav-menu{
-        flex-direction: column;
-        align-items: center;
-        margin-right: 20px;
-        background-color: #4ac590;
-        position: fixed;
-        left: 0;
-        top: 60px;
-        width: 100%;
-        padding: 20px 0;
+
+/***************BOTON BACK**************/
+.div-boton-back{
+    margin-top: 50px;
+    button{
+        width: 120px;
+        height: 35px;
+        margin: 0px 30px;
         
-        height: calc(100% - 60px);
-        overflow-y: auto;
+    }
+}
 
-        left:100%
-        transition left 0,3s;
+/******FOOTER***********/
+.hecho{
+    @include flex-justify;
+    color: $color;
+}
 
+/****Media Query*******/ 
+    
+@media screen and (max-width: 1220px){
+    .header-content,
+    .logo,
+    .container-main,
+    .container-footer,
+    .container-info-cover h1,
+    .container-info-cover{
+        max-width: 1000px;
+        padding: 20px;
+    }
+}
+
+@media  screen and (max-width: 1020px) {
+    .container-main{
+        width: 100%;
+        flex-direction: column;
     }
     
-    .nav-menu-item{
-        line-height: 90px;
+}
+
+@media  screen and (max-width: 800px) {
+
+    .container-main{
+        width: 20%;
+        justify-content: flex-end;
     }
-   
-    .nav-menu-link:hover{
-        background: none;
-        color: #A9d3e9;
-}
-.nav-toggle{
-    display: block;
-}
+    .menu{
+       width: 200px;
+       height: 100vh;
+       position: fixed;
+       top: 80px;
+       left: 0;
+       background-color: black;
+       box-shadow: 10px 0 20px -25px $color;
+      
+    }
 
-.nav-menu-visible{
-    left:0;
-}
+    .menu nav ul{
+        flex-direction: column;
+    }
 
+    .menu nav ul li{
+        max-width: 200px;
+        height: 50px;
+        justify-content: flex-start;
+    }
 
-}
-//******barra buscador*******//
-.barra-busqueda{
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.contenedor-buscador{
-    border: 1px solid $color;
-    width: 600px;
-    height: 70px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.busqueda-personaje{
-    display: flex;
-    align-items: center;
-    padding-top: 40px;
-}
-
-.bp{
-    font-family: cursive;
-    font-size: medium;
-    border-radius: 5px;
-
-}
-.lupa{
-    width: 70px;
-    height: auto;
-}
-//***********MAIN******************///
-.main{
-    width: auto;
-    height: 740px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    .menu nav ul li a{
+        margin-top: 40px;
+        color: $color;
+    }
 
 }
 
-.imagen-main{
-    border: 1px solid white;
-    border-radius: 10px;
-    box-shadow: 5px $color;
-}
 
 
 
-.presentacion{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: $color;
-    font-size: 30px;
-    padding: 20px;
-    border: 5px solid $color;
-    border-radius: 10px;
-    width: auto;
-    height: 300px;
-}
-    
-    
-
-
-
-//*************FOOTER**************///
-.footer{
-    color: $color;
-    display: flex;
-    justify-content: center;
-    
-}
-//********tarjetas personajes*****///
-#tarjetas-contenedor{
-    @include flex-wrap();
-    
-}
-
-.tarjeta{
-    border-radius: 10px;
-    border: 5px solid $color;
-    margin: 20px;
-    padding: 20px;
-    color: $color;
-}
-
-//************detalle personajes**********************//
-#detalles-contenedor{
-    @include flex-wrap();
-}
-
-.detalle{
-    border-radius: 10px;
-    border: 5px solid $color;
-    margin: 20px;
-    padding: 20px;
-    color: $color;
-}
-
-
-
-//*************peliculas*************//
-#pelicula{
-    @include flex-wrap();
-    
-}
-
-.tarjetas-peliculas{
-    border-radius: 10px;
-    border: 5px solid $color;
-    margin: 20px;
-    padding:20px;
-    color: $color;
-
-}
