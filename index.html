@@ -8,6 +8,8 @@
     <script src="https://kit.fontawesome.com/cace8c88fa.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Este a aca no hace nada. No puede haber a en el head. Querias poner un favicon? -->
     <a href="https://es.pikbest.com/png-images/qiantu-cartoon-snail-loading-loading-gif-animation_2734139.html"></a>
 
     <title>Rick</title>
@@ -27,6 +29,7 @@
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
+                        <!-- ojo, aca se te escapó un signo = en la etiqueta de cierre  -->
                         <li><a href="#seccion-character">Characters</a=></li>
                         <li><a href="#seccion-location">Location</a></li>
                         <li><a href="#seccion-episode">Episodes</a></li>
@@ -44,7 +47,9 @@
     <form class="form-ctn-bars-search" id="ctn-bars-search">
         <label for="input-search">Search</label>
         <input type="text" id="input-search" placeholder="Search">
+        <!-- Ojo, es button  -->
         <botton class="boton-busqueda" type="submit" id="busqueda"><img src="imagenes/back.png" alt="buscar"></botton>
+        <!-- falta un alt aca  -->
         <img class="cerrar" src="imagenes/boton-cerrar.png" id="cerrar-busqueda">
     </form>
 
@@ -68,11 +73,13 @@
         </section>-->
 
     <section class="seccion-character" id="seccion-character">
-        <div class="tarjetas" id="tarjetas-personajes"></div>
+        <div class="tarjetas-container" id="tarjetas-personajes"></div>
 
     </section>
 
+    <!-- esa palabra suelta controles esta mal aqui -->
     <div controles id="controles">
+        <!-- Si un boton no tiene contenido de texto, debe tener un aria label, por accesibilidad -->
         <button class="boton-prev prev-personajes" id="prev"><img src="imagenes/izquierda.png" id="izq"></button>
         <button class="boton-next next-personajes" id="next"><img src="imagenes/derecha.png" id="der"></button>
     </div>
@@ -83,7 +90,9 @@
         <div class="location" id="tarjetas-locacion"></div>
     </section>
 
+    <!-- estas repitendo el id controles aca, eso te va a traer problemas al seleccionar el elemento en js  -->
     <div controles id="controles">
+        <!-- tambien repetis los ids de las imagenes -->
         <button class="boton-prev prev-location" id="prev-location"><img src="imagenes/izquierda.png" id="izq"></button>
         <button class="boton-next next-location" id="next-location"><img src="imagenes/derecha.png" id="der"></button>
     </div>
@@ -93,6 +102,7 @@
         <div class="episode" id="tarjetas-episode"></div>
     </section>
 
+    <!-- Mismos comentarios aqui -->
     <div controles id="controles">
         <button class="boton-prev prev-episode" id="prev-episode"><img src="imagenes/izquierda.png" id="izq"></button>
         <button class="boton-next next-episode" id="next-episode"><img src="imagenes/derecha.png" id="der"></button>

@@ -1,3 +1,4 @@
+// es mejor importar las fonts en html: es mas rapida la carga 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@100&display=swap');
 
 /*********VARIABLES***********/
@@ -10,7 +11,7 @@ $colorhover: #15e6aa;
 $font: 'Indie Flower', cursive;
 $font1:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-
+// buen uso de mixins!
 
 @mixin flex-wrap {
     display: flex;
@@ -21,7 +22,8 @@ $font1:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     justify-content: center;
 }
-
+// Tu sass esta muy  bien pero no estas usando anidado, que es una de las cosas mas utiles y usadas!
+// Te animo a que lo practiques, de verdad se usa un monton en la industria.
 
 *{
     margin: 0;
@@ -48,6 +50,7 @@ header{
 }
 
 .header-content{
+    // ojo con el tabulado en max width
 max-width: 1200px;
    margin: auto;
    display: flex;
@@ -231,6 +234,11 @@ max-width: 1200px;
     margin-top: 0;
 }
 
+// Tenemos un problema: hay un elemento que tiene la clase tarjetas que es el contenedor de todas las tarjetas
+// y cada tarjeta en particular, que tambien tiene la misma clase
+// Entonces, cuando entramos a la seccion tarjetas, ¡todos estos hover se ejecutan a la vez!
+// En tu html, modifica el div con el id  "tarjetas-personajes" para que tenga la clase "tarjetas-container"
+// y esto se te va a solucionar
 .tarjetas:hover .img-personaje{
     margin-top: -110px;
 }
@@ -297,7 +305,7 @@ max-width: 1200px;
     height: 250px;
 }
 
-
+// No se si termino de entender lo que quisiste hacer, si queres me lo mostras en clase 
 /***#cargando{              MALE: esto era para cargar el SetTimeout, al 
     display: flex;                ponerlo me desaparecian todas las tarjetas
     justify-content: center;
