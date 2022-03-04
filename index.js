@@ -8,17 +8,26 @@ const nextEpisode = document.querySelector("#next-episode");
 
 
 const formCtnBarsSearch = document.querySelector("#ctn-bars-search");
-const inputSearch = document.getElementById("#input-search");
+// const inputSearch = document.getElementById("#input-search");
 const cerrarInputSearch = document.getElementById("cerrar-busqueda");
 const seccionCharacter = document.getElementById("seccion-character");
 const seccionLocation = document.getElementById("seccion-location");
 const detalleLocation = document.getElementById("detalle-location");
 
-const botonBusqueda = document.getElementById("#busqueda");
+// const botonBusqueda = document.getElementById("#busqueda");
+
+// Hace un console.log de inputSearch y de botonBusqueda: los dos son null. 
+// Eso significa que los estas seleccionando mal
+// recordá que cuando usás getElementById no tenes que agregar el # al principio del nombre. 
+// Modifica los selectores para que te queden asi:
+// const inputSearch = document.getElementById("input-search");
+// const botonBusqueda = document.getElementById("busqueda");
+// Con ese cambio, ya te va a funcionar la busqueda
 
 
 
 /*botonBusqueda.onclick = () =>{     MALE: ACA SE ME ROMPE TODO**
+    Esto es lo correcto para limpiar el valor del input, seguí por este camino!
     inputSearch.value = "";                                     *
 }                                                               *
 *///////////////////////////////////////////////////////////////
@@ -31,7 +40,9 @@ const mostrarBuscador = ()=>{
 
 const ocultarBuscador = () =>{
     formCtnBarsSearch.style.top = "-10px";
-    /*inputSearch.value= "";*/   /*ACA QUERIA QUE AL ESCRIBIR EN EL
+    inputSearch.value= ""
+    // te va a funcionar con la correccion que te hago mas arriba, esto esta perfecto!
+    /*ACA QUERIA QUE AL ESCRIBIR EN EL
                                    INPUT Y DESPUES DE CERRARSE QUE
                                    QUEDARA EN BLANCO Y NO LO LOGRE*/
     
@@ -51,6 +62,7 @@ const buscarPersonajes = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then(res => res.json())
         .then(data => {
+            // no dejes console log en una entrega
             console.log(data)
             ultimaPagina = data.info.pages
             crearTarjetasPersonaje(data.results)
@@ -90,6 +102,7 @@ let ultimaPaginaName = 0
 
 const buscarPersonajeFiltrado = (name) =>{
     fetch(`https://rickandmortyapi.com/api/character/?name=${name}`)
+    // Esta perfecto como implementaste el catch! 
     .catch((error) =>{                     /*TUVE QUE HACER UN CATCH PORQUE ME 
                                              MANDABA ERROR 404 Y OTRAS VECES ERROR
                                              500 - CON ESO SE ARREGLO PERO ME TRABO EN
@@ -99,9 +112,14 @@ const buscarPersonajeFiltrado = (name) =>{
     .then(res => res.json())
     .then(data => {
         crearTarjetasPersonaje(data.results)
+        // No dejes console.log en una entrega
         console.log(data.results)
     })
 }
+// La funcion buscarPersonajeFiltrado espera un param name, pero vos no se lo estas mandando aca
+// Eso hace que la primera busqueda de undefined y te de un error en la consola
+// Solucionarlo mandandole como param un string vacio, asi: 
+// buscarPersonajeFiltrado("")
 buscarPersonajeFiltrado()
 
 
@@ -117,6 +135,7 @@ const buscarLocacion = () => {
     fetch(`https://rickandmortyapi.com/api/location?page=${paginaActualLocation}`)
         .then(res => res.json())
         .then(data => {
+            // No dejes console.log en una entrega
             console.log(data)
             ultimaPaginaLocation = data.info.pages
             crearTarjetasLocacion(data.results)
@@ -176,7 +195,7 @@ const buscarEpisode = () => {
     fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActualEpisode}`)
         .then(res => res.json())
         .then(data => {
-
+            // No dejes console.log en una entrega
             console.log(data)
             ultimaPaginaEpisode = data.info.pages
             crearTarjetasEpisode(data.results)
